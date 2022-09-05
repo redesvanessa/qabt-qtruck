@@ -32,6 +32,11 @@
 //    
 //    cy.contains('button', 'Entrar').click()
 //})
+
+import loginPage from './pages/Login'
+import mapPage from './pages/Map'
+
+
 Cypress.Commands.add('apiResetUser', (instagram) => {
     cy.request({
         url: 'http://localhost:3333/helpers-reset',
@@ -52,4 +57,18 @@ Cypress.Commands.add('apiCreateUser', (payload) => {
     }).then(response => {
       expect(response.status).to.eql(201)
     })
+})
+
+Cypress.Commands.add('uiLogin', (user) => {
+  
+  loginPage.go()
+  loginPage.form(user)
+  loginPage.submit()
+  mapPage.loggedUser(user.name)
+
+})
+
+Cypress.Commands.add('setGeoLocation', (lat, long) => {
+  localStorage.setItem('qtruck:latitude', lat)
+  localStorage.setItem('qtruck:longitude', long)
 })
