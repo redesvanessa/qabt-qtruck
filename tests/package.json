@@ -11,6 +11,7 @@
     "cypress-mongodb": "^4.1.1"
   },
   "dependencies": {
-    "@shelex/cypress-allure-plugin": "^2.33.0"
+    "@shelex/cypress-allure-plugin": "^2.33.0",
+    "allure-commandline": "^2.18.1"
   }
 }
