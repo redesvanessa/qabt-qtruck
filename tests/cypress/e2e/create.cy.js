@@ -29,7 +29,6 @@ describe('Recomendacao', () => {
         createPage.Modal.haveText('Food truck cadastrado com sucesso!')
 
 
-        cy.wait(5000)
     });
 
 
@@ -61,32 +60,36 @@ describe('Recomendacao', () => {
         createPage.Modal.haveText('Esse food truck já foi cadastrado!')
 
 
-        cy.wait(5000)
+  
     });
 
-
     it('todos os campos sao obrigatorios', () => {
-        it('recomendar um food truck', () => {
-            const user = {
-                name: 'Margarita',
-                instagram: '@marga',
-                password: 'qacademy'
-            }
-            const foodtruck = {
-                latitude: '-23.5845548837854058',
-                longitude: '-46.674446913517876',
-            }
+        const user = {
+            name: 'Margarita',
+            instagram: '@marga',
+            password: 'qacademy'
+        }
+        const foodtruck = {
+            latitude: '-23.5845548837854058',
+            longitude: '-46.674446913517876',
+        }
 
-            cy.apiCreateUser(user)
-            cy.uiLogin(user)
+        cy.apiCreateUser(user)
+        cy.uiLogin(user)
 
-            mapPage.createLink()
-            cy.setGeoLocation(foodtruck.latitude, foodtruck.longitude)
-            createPage.submit()
+        mapPage.createLink()
+        cy.setGeoLocation(foodtruck.latitude, foodtruck.longitude)
+        createPage.submit()
 
-            const message = 'Os campos nome, descrição e horário de funcionaento devem ser informados para recomendar um food truck!'
-            createPage.Modal.haveText('Food truck cadastrado com sucesso!')
-        });
+        const message = 'Os campos nome, descrição e horário de funcionamento devem ser informados para recomendar um food truck!'
+        createPage.Modal.haveText(message)
+    });
 
-    })
-})
+});
+
+
+   
+    
+ 
+
+    

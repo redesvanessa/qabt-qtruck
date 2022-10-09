@@ -1,0 +1,38 @@
+{
+    "success": {
+            "name": "xxx",
+            "instagram": "@xxx",
+            "password": "qacademy"   
+    },
+
+    "inv_pass": {
+            "instagram": "@xxx",
+            "password": "qacadem"
+    },
+
+    "inv_inst": {
+            "instagram": "@naoexiste",
+            "password": "qacademy"
+          },
+
+    "not_valid_inst": {
+            "instagram": "$naoexiste",
+            "password": "qacademy"
+          
+    },
+
+    "all_fields_mandatory": {
+            "instagram": "",
+            "password": ""
+    },
+
+    "pass_mandatory" : {
+        "instagram": "$xxx"
+    },
+
+    "inst_mandatory" : {
+        "password": "qacademy"
+    }
+    
+
+}
